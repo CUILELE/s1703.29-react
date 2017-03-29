@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/browser.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/bable">
+		var div = <div>abc</div>;
+		//相当于创建了一个div
+		var div = document.createElement('div');
+		
+		//一个父元素列入
+		var odiv = <div>
+			<span>aaa</span>
+			<span>aaa</span>
+			</div>
+		//错	两个顶级元素了
+		var <span>aaa</span> <span>aaa</span>	
+		//错没有顶级元素了
+		var div= aaa;
+	</script>
+</head>
+<body>
+<!--
+组件化分工，合作
+虚拟dom  性能高
+跨平台--移动端
+-----
+react(技术栈）就是全家桶
+1.react主体
+2.webpack grunt，gulp自动化构建工具
+3.flex  布局用的略微淘汰
+4.react-route 路由  （就是大应用拆成小应用）
+5.redux ：view 层复杂的东西有用
+6.mocha  测试
+7.istanbul：覆盖率
+-----------
+jsx  js语法的增强  编译器 适应es6
+1.增强js语法———html代码直接放在js里
+2.babel
+
+注意事项
+有且只能有一个父元素
+bable也支持模板字符串下列
+var div= <div>{aaa}</div>
+
+最强：
+1.组件
+2.状态
+react几乎一切都是组件
+
+知识点
+ReactDom.render
+操作dom的  render把什么东西渲染到什么里面
+
+babel语法环境之下，有了新的面向对象写法
+class Person{
+	constructor(){
+		
+	}
+	show(){
+		
+	}
+}
+
+constructor 构造函数整个类在初始化的时候都会被执行到
+extend 继承
+props 属性  react里所传的所有属性都在props里面
+
+组件
+1定义组件--组件==class
+	类    名字 继承 谁（React.Component 专门写组件的父类）至少要有一个方法
+	class 名字 extends React.Component{
+		render(){
+			return <span>111</span>
+		}
+	}
+2使用组件
+就跟标签一样用
+ReactDOM.render(
+		<Comd name = '崔乐' age="18"/>,
+		div
+	);
+}
+
+属性--定死
+状态--可变
+1.状态是活得
+	constructor里面--this.status = {};初始化
+	其他方法里面--this.setState({})
+2.事件大小写不能乱
+onChange
+onClick
+。。。
+3.绑定事件
+onChange = {fn} fn是方法，不是函数这个不行
+onChange = {this.fn} 不对需要bind
+onChange = {this.fn.bind(this)} ok
+
+4.用了constructor 的时候必须用super
+
+系统带的
+ReactDOM.render(){
+	<span>1111</span>,
+	oDiv
+}
+
+自己的
+ReactDOM.render(
+<Comp/>,
+oDiv
+)
+
+-->
+</body>
+</html>

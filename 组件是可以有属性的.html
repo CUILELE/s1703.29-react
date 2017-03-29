@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/react.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/react-dom.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/browser.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/babel">
+			class Comd extends React.Component{
+				render(){
+					return <span>我的名字是{this.props.name},我{this.props.age}</span>
+				}
+			}
+			window.onload = function (){
+				var div = document.getElementById('div1')
+				ReactDOM.render(
+					<Comd name = '崔乐' age="18"/>,
+					div
+				);
+			}
+		</script>
+	</head>
+	<body>
+		<div id="div1"></div>
+	</body>
+</html>

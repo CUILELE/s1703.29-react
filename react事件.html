@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/react.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/react-dom.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/browser.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/babel">
+			//首先先写一个组件
+			class Comp extends React.Component{
+				//2 然后需要2个东西
+				//初始化状态，状态不能不初始化就直接用，一定要初始化再用
+				constructor(...args){
+					//这里面要有父类的构造函数，构造函数里面可能有很多参数，所以...args就是有什么就传什么。
+					super(...args);//超类、父类 就是先完成父类的构造工作才能做自己的事
+					this.state= {value:''};//接下来要给初始值。
+				}
+				//最后需要事件我们就要有一个事件函数
+				fn(ev){//借ev来获取当前事件的发生对象
+					this.setState({//setState完成的状态的更改
+						value:ev.target.value//并且修改的是value这个状态，改成发生事件的这个状态。
+					});
+				}
+				
+				//3必不可少的要render结构吧应该
+				render(){
+					return <div>
+						//可变的所有用{}模板输进去，并且fn的this要绑定到这个this上
+						<input onChange={this.fn.bind(this)}/>		
+						<span>{this.state.value}</span>
+					</div>
+				}
+			}
+			
+			window.onload = function (){
+				var div = document.getElementById('div1')
+				ReactDOM.render(
+					<Comp/>,
+					div
+				);
+			}
+		</script>
+	</head>
+	<body>
+		<div id="div1">
+			
+		</div>
+	</body>
+</html>

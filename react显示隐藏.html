@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/react.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/react-dom.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/browser.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.box{
+				width: 200px;
+				height: 200px;
+				background: red;
+			}
+		</style>
+		<script type="text/babel">
+			class showhide extends React.Component{
+//				constructor(...args){
+//					super(...args);
+//				}
+				render(){
+					return <div>
+							<input type='text' value = '显示隐藏'/>
+							<div className = 'box'></div>
+						</div>
+				}
+			}
+			window.onload = function (){
+				var div = document.getElementById('div1');
+				ReactDOM.render(
+					<showhide/>,
+					div
+				)
+			}
+		</script>
+	</head>
+	<body>
+		<div id="div1">
+			
+		</div>
+	</body>
+</html>

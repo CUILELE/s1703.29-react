@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+			<script src="js/react.js" type="text/javascript" charset="utf-8"></script>
+			<script src="js/react-dom.js" type="text/javascript" charset="utf-8"></script>
+			<script src="js/browser.js" type="text/javascript" charset="utf-8"></script>
+			<script type="text/babel">
+				//创建一个组件	
+				class Comp extends React.Component{
+//					constructor(...args){
+//						super(...args);
+//						this.state = {value:''}
+//					}
+					
+					render(){
+						return <div>
+							<input type ='text' onChange={this.fn.bind(this)}/>
+							<span>{this.state.value}</span>
+						</div>
+					}
+					
+//					fn(ev){
+//						this.setState({
+//							value:ev.target.value
+//						});
+//					}
+				}
+				
+				window.onload = function (){
+					var div = document.getElementById('div1');
+					ReactDOM.render(
+						<Comp/>,
+						div
+					)
+						
+				}
+			</script>
+	</head>
+	<body>
+		<div id="div1"></div>
+	</body>
+</html>
